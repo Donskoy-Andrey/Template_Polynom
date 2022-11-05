@@ -34,8 +34,9 @@ int main(){
     Polynom Quat_2(vq2);
 
     std::cout << std::endl << "Quaternion polynoms:" << std::endl;
-    Quat_1 + Quat_2;
-    // (Quat_1 - Quat_2).beautiful_print();
-    // (Quat_1 * Quat_2).beautiful_print();
+    (Quat_1 + Quat_2).print();
+    (Quat_1 - Quat_2).print();
+    (Quat_1 * Quat_2).print();
+    
     return 0;
 }

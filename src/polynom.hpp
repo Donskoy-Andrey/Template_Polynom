@@ -1,12 +1,12 @@
 #pragma once
 #include <vector>
 #include <complex>
-
+#include "quat.hpp"
 
 template <typename T>
 class Polynom{
     private:
-        std::vector<T> _coefficients; // T = Quat <double>
+        std::vector<T> _coefficients;
 
     public:
         Polynom(const std::vector <T> &data);
@@ -33,6 +33,13 @@ template <typename T>
 Polynom<T>::Polynom (int len){
     for (int i = 0; i < len; ++i){
         _coefficients.push_back(0);
+    }
+};
+
+template<>
+Polynom<Quat<double>>::Polynom (int len){ // T = Quat <double>
+    for (int i = 0; i < len; ++i){
+        _coefficients.push_back(Quat<double>(0,0,0,0));
     }
 };
  
@@ -67,7 +74,7 @@ Polynom<T> Polynom<T>::operator - (const Polynom<T> &poly){
         result_polynom._coefficients[i] = _coefficients[i];
     }
     for (int i = 0; i < poly._coefficients.size(); ++i) {    
-        result_polynom._coefficients[i] -= poly._coefficients[i];
+        result_polynom._coefficients[i] = result_polynom._coefficients[i] - poly._coefficients[i];
     }
     
     return result_polynom;
@@ -93,6 +100,20 @@ void Polynom<T>::print(){
         std::cout << " " << _coefficients[i];
     }
     std::cout << "]" << std::endl;
+};
+
+template<>
+void Polynom<Quat<double>>::print(){
+    _coefficients[0].print();
+    for (int i = 1; i < _coefficients.size(); ++i){
+        std::cout << " + ";
+        _coefficients[i].print();
+        std::cout << "*x";
+        if (i > 1){
+            std::cout << "^" << i;
+        }
+    }
+    std::cout << std::endl;
 };
 
 template <typename T>
