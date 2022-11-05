@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <complex>
+#include "polynom.hpp"
 
 
 template <typename T>
@@ -82,10 +83,3 @@ template<typename T>
 Quat<T> Quat<T>::operator * (T num){
     return Quat<T>(_s * num, _i * num, _j * num, _k * num);
 }
-
-
-Polynom<T>::Polynom(const std::vector <T> &data){
-    for (int i = 0; i < data.size(); ++i){
-        _coefficients.push_back(data[i]);
-    }
-};
