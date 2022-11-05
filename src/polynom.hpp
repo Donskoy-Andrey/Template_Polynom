@@ -6,7 +6,7 @@
 template <typename T>
 class Polynom{
     private:
-        std::vector<T> _coefficients;
+        std::vector<T> _coefficients; // T = Quat <double>
 
     public:
         Polynom(const std::vector <T> &data);
@@ -29,12 +29,6 @@ Polynom<T>::Polynom(const std::vector <T> &data){
     }
 };
 
-template <typename T>
-Polynom<T>::Polynom (int len){
-    for (int i = 0; i < len; ++i){
-        _coefficients.push_back(0);
-    }
-};
 
 template <typename T>
 Polynom<T> Polynom<T>::operator + (const Polynom<T> &poly){
