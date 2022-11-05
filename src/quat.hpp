@@ -26,7 +26,7 @@ class Quat{
         Quat<T> operator += (const Quat<T> &quat);
         Quat<T> operator * (int num);
 
-        void print();
+        void beautiful_print();
 };
 
 
@@ -84,6 +84,6 @@ Quat<T> Quat<T>::operator * (int num){
 }
 
 template<typename T>
-void Quat<T>::print(){
+void Quat<T>::beautiful_print(){
     std::cout << "(" << _s << " + " << _i << "*i + " << _j << "*j + " << _k << "*k)";
 }

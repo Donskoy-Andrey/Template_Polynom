@@ -37,6 +37,5 @@ int main(){
     (Quat_1 + Quat_2).print();
     (Quat_1 - Quat_2).print();
     (Quat_1 * Quat_2).print();
-    
     return 0;
 }

@@ -5,10 +5,11 @@
 
 template <typename T>
 class Polynom{
-    private:
-        std::vector<T> _coefficients;
+    // private:
+        // std::vector<T> _coefficients;
 
     public:
+        std::vector<T> _coefficients;
         Polynom(const std::vector <T> &data);
         Polynom(int len);
         Polynom() = default;
@@ -104,10 +105,10 @@ void Polynom<T>::print(){
 
 template<>
 void Polynom<Quat<double>>::print(){
-    _coefficients[0].print();
+    _coefficients[0].beautiful_print();
     for (int i = 1; i < _coefficients.size(); ++i){
         std::cout << " + ";
-        _coefficients[i].print();
+        _coefficients[i].beautiful_print();
         std::cout << "*x";
         if (i > 1){
             std::cout << "^" << i;
@@ -148,7 +149,7 @@ void Polynom<T>::beautiful_print(){
 };
 
 
-template<>
+template<> 
 void Polynom<std::complex<double>>::beautiful_print(){
     int counter = 0;
 
