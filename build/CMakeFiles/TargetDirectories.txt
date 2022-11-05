@@ -1,0 +1,3 @@
+/home/user/labs/cpp_labs/polynom_template/build/CMakeFiles/main.dir
+/home/user/labs/cpp_labs/polynom_template/build/CMakeFiles/edit_cache.dir
+/home/user/labs/cpp_labs/polynom_template/build/CMakeFiles/rebuild_cache.dir
