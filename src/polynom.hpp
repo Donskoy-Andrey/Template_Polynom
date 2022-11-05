@@ -29,7 +29,13 @@ Polynom<T>::Polynom(const std::vector <T> &data){
     }
 };
 
-
+template <typename T>
+Polynom<T>::Polynom (int len){
+    for (int i = 0; i < len; ++i){
+        _coefficients.push_back(0);
+    }
+};
+ 
 template <typename T>
 Polynom<T> Polynom<T>::operator + (const Polynom<T> &poly){
     Polynom<T> result_polynom(std::max(_coefficients.size(), poly._coefficients.size()));
