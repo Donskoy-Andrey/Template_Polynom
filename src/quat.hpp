@@ -23,7 +23,7 @@ class Quat{
 
         bool operator == (const Quat<T> &quat);
         bool operator != (const Quat<T> &quat);
-        Quat<T> operator += (const Quat<T> &quat);
+        Quat<T>& operator += (const Quat<T> &quat);
         Quat<T> operator * (int num);
 
         void beautiful_print();
@@ -70,7 +70,7 @@ bool Quat<T>::operator != (const Quat<T> &quat){
 }
 
 template<typename T>
-Quat<T> Quat<T>::operator += (const Quat<T> &quat){
+Quat<T>& Quat<T>::operator += (const Quat<T> &quat){
     _s = _s + quat._s;
     _i = _i + quat._i;
     _j = _j + quat._j;
