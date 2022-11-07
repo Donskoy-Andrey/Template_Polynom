@@ -5,11 +5,10 @@
 
 template <typename T>
 class Polynom{
-    // private:
-        // std::vector<T> _coefficients;
+    private:
+        std::vector<T> _coefficients;
 
     public:
-        std::vector<T> _coefficients;
         Polynom(const std::vector <T> &data);
         Polynom(int len);
         Polynom() = default;
